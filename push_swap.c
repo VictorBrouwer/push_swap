@@ -6,7 +6,7 @@
 /*   By: vbrouwer <vbrouwer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 11:41:36 by vbrouwer          #+#    #+#             */
-/*   Updated: 2023/01/09 11:00:27 by vbrouwer         ###   ########.fr       */
+/*   Updated: 2023/01/09 14:47:59 by vbrouwer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,15 @@
 
 int	main(int argc, char **argv)
 {
-	long	i;
-	int		d;
 	int		*index;
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 
-	if (check_input(argc, argv) == 1)
-		return (1);
+	if (argc == 2)
+		string_option(argv);
+	check_input(argc, argv);
 	stack_a = init_stack('a', (argc - 1));
-	d = argc - 1;
-	while (d > 0)
-	{
-		i = ft_atol(argv[d]);
-		if (i > INT_MAX || i < INT_MIN)
-			error();
-		init_push(stack_a, i);
-		d--;
-	}
+	fill_stack(stack_a, argc, argv);
 	doubles_check(stack_a);
 	index = get_index(stack_a);
 	stack_b = init_stack('b', (argc - 1));
@@ -44,7 +35,23 @@ int	main(int argc, char **argv)
 	return (0);
 }
 
-int	check_input(int argc, char **argv)
+void	fill_stack(t_stack *stack, int argc, char **argv)
+{
+	long	i;
+	int		d;
+
+	d = argc - 1;
+	while (d > 0)
+	{
+		i = ft_atol(argv[d]);
+		if (i > INT_MAX || i < INT_MIN)
+			error();
+		init_push(stack, i);
+		d--;
+	}
+}
+
+void	check_input(int argc, char **argv)
 {
 	int	i;
 	int	j;
@@ -65,7 +72,6 @@ int	check_input(int argc, char **argv)
 		}
 		i++;
 	}
-	return (0);
 }
 
 void	doubles_check(t_stack *stack)

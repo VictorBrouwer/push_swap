@@ -1,5 +1,5 @@
 NAME = push_swap
-CC = gcc -Wall -Werror -Wextra -g #-fsanitize=address
+CC = gcc -Wall -Werror -Wextra #-fsanitize=address
 HEADER = push_swap.h
 SRC =	push_swap.c \
 		stack_ops.c \
@@ -7,7 +7,8 @@ SRC =	push_swap.c \
 		ugly_sort_algo.c \
 		error.c \
 		stack_ops_rot.c \
-		stack_ops_3.c
+		stack_ops_3.c \
+		string_option.c
 
 OBJ = $(SRC:.c=.o)
 

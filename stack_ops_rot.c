@@ -6,7 +6,7 @@
 /*   By: vbrouwer <vbrouwer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 17:37:50 by vbrouwer          #+#    #+#             */
-/*   Updated: 2023/01/05 17:48:21 by vbrouwer         ###   ########.fr       */
+/*   Updated: 2023/01/09 15:02:03 by vbrouwer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	single_rotate(t_stack *s)
 {
 	rotate(s);
-	ft_printf("r%c\n", s->c);
+	ft_printf("rr%c\n", s->c);
 }
 
 void	double_rotate(t_stack *stack1, t_stack *stack2)
@@ -43,7 +43,7 @@ void	rotate(t_stack *s)
 void	single_rev_rotate(t_stack *s)
 {
 	rev_rotate(s);
-	ft_printf("rr%c\n", s->c);
+	ft_printf("r%c\n", s->c);
 }
 
 void	double_rev_rotate(t_stack *stack1, t_stack *stack2)

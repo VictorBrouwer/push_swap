@@ -6,7 +6,7 @@
 /*   By: vbrouwer <vbrouwer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 11:44:21 by vbrouwer          #+#    #+#             */
-/*   Updated: 2023/01/09 10:59:50 by vbrouwer         ###   ########.fr       */
+/*   Updated: 2023/01/09 13:20:23 by vbrouwer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@ typedef struct s_stack {
 	int		top;
 }			t_stack;
 t_stack		*init_stack(char c, int size);
-int			check_input(int argc, char **argv);
+void		fill_stack(t_stack *stack, int argc, char **argv);
+void		fill_stack_so(t_stack *stack, int j, char **strings);
+void		check_input(int argc, char **argv);
 long		ft_atol(const char *str);
 void		init_push(t_stack *s, int element);
 void		push(t_stack *stack1, t_stack *stack2);
@@ -50,5 +52,6 @@ int			get_biggest_num(t_stack *stack);
 int			count_bits(int x);
 int			check_if_sorted(t_stack *stack);
 void		error(void);
+void		string_option(char **argv);
 
 #endif

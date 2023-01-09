@@ -6,7 +6,7 @@
 /*   By: vbrouwer <vbrouwer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 13:12:13 by vbrouwer          #+#    #+#             */
-/*   Updated: 2023/01/09 10:55:01 by vbrouwer         ###   ########.fr       */
+/*   Updated: 2023/01/09 14:43:32 by vbrouwer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,8 @@ void	small_sort(t_stack *stack, int	*index)
 		return (single_swap(stack));
 	else if (index[stack->top] == 0)
 	{
-		single_rev_rotate(stack);
-		single_swap(stack);
-		return (single_rotate(stack));
+		single_rotate(stack);
+		return (single_swap(stack));
 	}
 	else if (index[1] == 0)
 	{
