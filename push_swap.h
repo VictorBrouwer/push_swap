@@ -6,15 +6,15 @@
 /*   By: vbrouwer <vbrouwer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 11:44:21 by vbrouwer          #+#    #+#             */
-/*   Updated: 2023/01/10 14:48:40 by vbrouwer         ###   ########.fr       */
+/*   Updated: 2023/01/10 17:26:01 by vbrouwer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "../libft/libft.h"
-# include "../ft_printf/ft_printf.h"
+# include "libft/libft.h"
+# include "ft_printf/ft_printf.h"
 # include <limits.h>
 # include <unistd.h>
 # include <stdlib.h>
