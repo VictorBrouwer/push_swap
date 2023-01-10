@@ -6,7 +6,7 @@
 /*   By: vbrouwer <vbrouwer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 15:33:11 by vbrouwer          #+#    #+#             */
-/*   Updated: 2023/01/05 17:43:23 by vbrouwer         ###   ########.fr       */
+/*   Updated: 2023/01/10 15:28:07 by vbrouwer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ int	*get_index(t_stack *stack)
 	int	cnt;
 	int	*result;
 
-	result = malloc(stack->top * sizeof(int));
+	result = malloc((stack->top + 1) * sizeof(int));
+	protection(result);
 	i = stack->top;
 	while (i > -1)
 	{
@@ -37,12 +38,14 @@ int	*get_index(t_stack *stack)
 	return (result);
 }
 
-void	radix_sort(t_stack *stack_A, t_stack *stack_B)
+void	radix_sort(t_stack *stack_A, t_stack *stack_B, int *index)
 {
 	int	i;
 	int	shift;
 	int	amount_to_check;
 
+	free(stack_A->elements);
+	stack_A->elements = index;
 	amount_to_check = count_bits(get_biggest_num(stack_A)) + 1;
 	shift = 0;
 	while (shift < amount_to_check)
@@ -75,6 +78,7 @@ int	get_biggest_num(t_stack *stack)
 			return (stack->elements[i]);
 		i++;
 	}
+	free(index);
 	return (0);
 }
 

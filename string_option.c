@@ -6,21 +6,22 @@
 /*   By: vbrouwer <vbrouwer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 11:51:03 by vbrouwer          #+#    #+#             */
-/*   Updated: 2023/01/09 13:32:20 by vbrouwer         ###   ########.fr       */
+/*   Updated: 2023/01/10 14:49:15 by vbrouwer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push_swap.h"
+#include "push_swap.h"
 
 void	string_option(char **argv)
 {
-	char **strings;
+	char	**strings;
 	int		i;
 	int		*index;
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 
 	strings = ft_split(argv[1], ' ');
+	protection(strings);
 	i = 0;
 	while (strings[i])
 		i++;
@@ -35,7 +36,8 @@ void	string_option(char **argv)
 	else if (i < 7)
 		medium_sort(stack_a, stack_b);
 	else
-		radix_sort(stack_a, stack_b);
+		radix_sort(stack_a, stack_b, index);
+	free(index);
 	exit(0);
 }
 

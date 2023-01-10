@@ -6,7 +6,7 @@
 /*   By: vbrouwer <vbrouwer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 13:12:13 by vbrouwer          #+#    #+#             */
-/*   Updated: 2023/01/09 14:43:32 by vbrouwer         ###   ########.fr       */
+/*   Updated: 2023/01/10 11:52:46 by vbrouwer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int	check_if_sorted(t_stack *stack)
 		i--;
 		cnt++;
 	}
+	free(index);
 	return (0);
 }
 
@@ -73,6 +74,7 @@ void	medium_sort(t_stack *stack_A, t_stack *stack_B)
 	{
 		push(stack_B, stack_A);
 	}
+	free(index);
 }
 
 int	get_pos_low(t_stack *stack)
@@ -88,5 +90,6 @@ int	get_pos_low(t_stack *stack)
 			return (i);
 		i--;
 	}
+	free(index);
 	return (-1);
 }

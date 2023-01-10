@@ -1,5 +1,5 @@
 NAME = push_swap
-CC = gcc -Wall -Werror -Wextra #-fsanitize=address
+CC = gcc -Wall -Werror -Wextra -fsanitize=address
 HEADER = push_swap.h
 SRC =	push_swap.c \
 		stack_ops.c \

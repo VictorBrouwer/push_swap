@@ -6,7 +6,7 @@
 /*   By: vbrouwer <vbrouwer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 11:41:36 by vbrouwer          #+#    #+#             */
-/*   Updated: 2023/01/09 14:47:59 by vbrouwer         ###   ########.fr       */
+/*   Updated: 2023/01/10 15:23:51 by vbrouwer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ int	main(int argc, char **argv)
 	else if (argc < 8)
 		medium_sort(stack_a, stack_b);
 	else
-		radix_sort(stack_a, stack_b);
+		radix_sort(stack_a, stack_b, index);
+	free(index);
 	return (0);
 }
 
@@ -123,11 +124,3 @@ long	ft_atol(const char *str)
 	}
 	return (result * sign);
 }
-
-// printf doesn't print on STDERR_FILENO but error messages should
-// if (check_if_sorted(stack_a) != 0)
-// 	ft_printf("\n not Sorted! \n");
-// else
-// 	ft_printf("\n Sorted! \n");
-// ft_printf("\nstack a:\n");
-// print_stack(stack_a);

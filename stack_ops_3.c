@@ -6,7 +6,7 @@
 /*   By: vbrouwer <vbrouwer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 17:39:24 by vbrouwer          #+#    #+#             */
-/*   Updated: 2023/01/09 13:43:26 by vbrouwer         ###   ########.fr       */
+/*   Updated: 2023/01/10 14:31:31 by vbrouwer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	print_stack(t_stack *s)
 	i = s->top;
 	while (i > -1)
 	{
-		ft_printf("\n digit%d:%d", i, s->elements[i]);
+		ft_printf("digit:%d has value:%d\n", i, s->elements[i]);
 		i--;
 	}
 }
