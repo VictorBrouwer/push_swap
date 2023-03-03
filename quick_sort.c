@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ugly_sort_algo.c                                   :+:      :+:    :+:   */
+/*   quick_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vbrouwer <vbrouwer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 13:12:13 by vbrouwer          #+#    #+#             */
-/*   Updated: 2023/01/10 11:52:46 by vbrouwer         ###   ########.fr       */
+/*   Updated: 2023/03/03 15:39:43 by vbrouwer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	check_if_sorted(t_stack *stack)
 	while (i > -1)
 	{
 		if (cnt != index[i])
-			return (-1);
+			return (free(index), -1);
 		i--;
 		cnt++;
 	}
@@ -87,7 +87,7 @@ int	get_pos_low(t_stack *stack)
 	while (i > -1)
 	{
 		if (index[i] == 0)
-			return (i);
+			return (free(index), i);
 		i--;
 	}
 	free(index);

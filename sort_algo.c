@@ -6,7 +6,7 @@
 /*   By: vbrouwer <vbrouwer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 15:33:11 by vbrouwer          #+#    #+#             */
-/*   Updated: 2023/01/10 15:28:07 by vbrouwer         ###   ########.fr       */
+/*   Updated: 2023/03/03 15:39:03 by vbrouwer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int	get_biggest_num(t_stack *stack)
 	while (i < (stack->top + 1))
 	{
 		if (index[i] == stack->top)
-			return (stack->elements[i]);
+			return (free(index),stack->elements[i]);
 		i++;
 	}
 	free(index);
